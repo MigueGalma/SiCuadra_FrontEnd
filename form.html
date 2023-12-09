@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Si Cuadra - Compra</title>
+    <link rel="icon" href="images/flaticon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<header>
+    <div class="container_header">
+        <!-- <p class="logo">Si cuadra</p> --> 
+        <img src="images/banner_logo.png" class="logotipo">
+        <nav>
+            <a href="index.html">Volver</a>
+        </nav>
+    </div>
+
+    <!--formulario -->
+
+    <div class="container mb-4 mt-4">
+        <h1>Encargue su cuadro personalizado</h1>
+        <form id="myForm" action="http://127.0.0.1:5000" method="post">
+          <div class="form-group">
+            <label for="nombre">Nombres:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Ingrese su nombre" oninput="validarLetras(this)">
+          </div>
+          <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" class="form-control" id="apellido" name="apellido" required placeholder="Ingrese su apellido" oninput="validarLetras(this)">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required placeholder="Ingrese su email">
+          </div>
+          <div class="form-group">
+            <label for="direccion">Dirección</label>
+            <input type="text" class="form-control" id="direccion" name="direccion" required placeholder="Ingrese su Dirección">
+          </div>
+          <div class="form-group">
+            <label for="localidad">Localidad</label>
+            <input type="text" class="form-control" id="localidad" name="localidad" required placeholder="Ingrese su Localidad">
+          </div>
+          <div class="form-group">
+            <label for="provincia">Provincia</label>
+            <input type="text" class="form-control" id="provincia" name="provincia" required placeholder="Ingrese su Provincia">
+          </div>
+            <div class="form-group col-6 row">
+            <label for="codigopostal">Codigo Postal</label>
+            <input type="text" class="form-control" id="codigopostal" name="codigopostal" required placeholder="Ingrese su codigo postal">
+          </div>        
+          <div class="form-group">
+            <p>Orientación del cuadro:</p>          
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="opciones" id="opcion1" value="opcion1" required>
+              <label class="form-check-label" for="opcion1">
+                Individual
+              </label>
+            </div>         
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="opciones" id="opcion2" value="opcion2" required>
+              <label class="form-check-label" for="opcion2">
+                Horizontal
+              </label>
+            </div>         
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="opciones" id="opcion3" value="opcion3" required>
+              <label class="form-check-label" for="opcion3">
+                Vertical
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <p>Medidas:</p>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="medidas" id="medida1" value="medida1" required>
+              <label class="form-check-label" for="medida1">
+                90cm x 60cm
+              </label>
+            </div>                  
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="medidas" id="medida2" value="medida2" required>
+              <label class="form-check-label" for="medida2">
+                75cm x 70cm
+              </label>
+            </div>          
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="medidas" id="medida3" value="medida3" required>
+              <label class="form-check-label" for="medida3">
+                100cm x 70cm
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="medidas" id="medida4" value="medida4" required>
+                <label class="form-check-label" for="medida4">
+                  150cm x 70cm
+                </label>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label for="imagen">Imagen:</label>
+            <input type="file" class="form-control-file" id="imagen" accept="image/*" required>
+            <img id="preview" src="#" alt="Imagen previa" style="display: none; max-width: 100px; margin-top: 50px;">
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="button" class="btn btn-danger" onclick="reiniciarFormulario()">Borrar todo</button>
+          <div id="mensaje" class="mt-3"></div>
+        </form>
+      </div>
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+      <!--Script para que solamente se puedan ingresar letras en "nombre" y "apellido"-->
+      <script>
+        function validarLetras(input) {
+          const regex = /^[a-zA-Z!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~ñÑ ]+$/;
+       
+          if (!regex.test(input.value)) {
+            // Si se ingresan caracteres que no son letras, mostrar alerta
+            alert('Solo se permiten letras en este campo.');
+            input.value = '';  // Limpiar el campo
+          }
+        }
+        </script>
+
+        <!--Script para tener una preview de la imagen que cargamos al formulario-->
+      <script>
+        document.getElementById('imagen').addEventListener('change', function(event) {
+          var reader = new FileReader();
+          reader.onload = function() {
+            var img = document.getElementById('preview');
+            img.src = reader.result;
+            img.style.display = 'block';
+          }
+          reader.readAsDataURL(event.target.files[0]);
+        });
+      </script>
+
+      <script>
+
+          // Agregar un evento para verificar la extensión del archivo cuando se envía el formulario
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+        const file = document.getElementById('imagen');
+        const selectedFile = file.files[0];
+
+        if (selectedFile) {
+        const allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i; // Extensiones permitidas
+
+        if (!allowedExtensions.exec(selectedFile.name)) {
+          // Archivo no es una imagen permitida
+          alert('Por favor, selecciona un archivo de imagen válido (JPEG, JPG, PNG o GIF).');
+          event.preventDefault(); // Evitar que se envíe el formulario
+        }
+        }
+        });
+
+      </script>
+
+      <!--Script para que al apretar el boton borrar todo se borre todo lo seleccionado o escrito-->
+      <script>
+      function reiniciarFormulario() {
+        // Obtener el formulario y llamar a la función reset() para reiniciarlo
+        const formulario = document.getElementById('myForm');
+        formulario.reset();
+      }
+      </script>
+
+      <!--// Script para habilitar la medida que corresponda a la opcion seleccionada-->
+      <script>
+
+        document.querySelectorAll('input[name="opciones"]').forEach(function(radio) {
+          radio.addEventListener('change', function() {
+
+            document.querySelectorAll('input[name="medidas"]').forEach(function(medida) {
+              medida.disabled = true;
+            });
+
+            // Script para habilitar la medida que corresponda a la opcion seleccionada
+            var medidaAsociada = this.value.replace("opcion1", "medida1");
+            document.querySelector('input[value="' + medidaAsociada + '"]').disabled = false;
+            var medidaAsociada = this.value.replace("opcion2", "medida2");
+            document.querySelector('input[value="' + medidaAsociada + '"]').disabled = false;
+            var medidaAsociada = this.value.replace("opcion2", "medida3");
+            document.querySelector('input[value="' + medidaAsociada + '"]').disabled = false;
+            var medidaAsociada = this.value.replace("opcion2", "medida4");
+            document.querySelector('input[value="' + medidaAsociada + '"]').disabled = false;
+            var medidaAsociada = this.value.replace("opcion3", "medida2");
+            document.querySelector('input[value="' + medidaAsociada + '"]').disabled = false;
+            var medidaAsociada = this.value.replace("opcion3", "medida3");
+            document.querySelector('input[value="' + medidaAsociada + '"]').disabled = false;
+            var medidaAsociada = this.value.replace("opcion3", "medida4");
+            document.querySelector('input[value="' + medidaAsociada + '"]').disabled = false;
+          });
+        });
+        </script>
+
+        <!--Script para que al enviar el form salte el cartel que se envio de forma correcta.-->
+        <script>
+          document.getElementById('myForm').addEventListener('submit', function(e) {
+              e.preventDefault();
+
+              // Muestra un mensaje de confirmación
+              document.getElementById('mensaje').innerHTML = '<div class="alert alert-success" role="alert">Se ha enviado de forma correcta</div>';
+          });
+        </script>
+
+    <!-- Validacion de datos -->  
+
+      <script>
+        function validacionFormulario () {alert("Se ha enviado toda la información. Muchas gracias")}
+        document.querySelector("form").addEventListener("submit",validacionFormulario)
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+    <footer>
+        <div class="container_footer">
+            <p>Buscanos también en nuestras redes<p>
+            <p>   
+            <a href="https://www.facebook.com/profile.php?id=100064683802020" target="_blank" title="Nuestra página oficial de Facebook">
+            <img src="images/facebook_icon.svg" alt="Icono Facebook" width="30" height="30">
+            </a>
+            <a href="https://www.instagram.com/somos_sicuadra/" target="_blank" title="Nuestro perfil oficial de Instagram">
+            <img src="images/instagram_icon.svg" alt="Icono Instagram" width="30" heigth="30">
+           </a>
+            <a href="https://api.whatsapp.com/send?phone=541123781211&text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20producto" target="_blank" title="Mandenos una consulta por mensaje">
+            <img src="images/whatsapp_icon.svg" alt="Icono Whatssap" width="30" height="30">
+            </a>
+            <br>
+            </p>
+            <p>&copy; Somos SiCuadra 2023. Todos los derechos reservados</p>
+        </div>
+
+    </footer>
+<body>
+    
+</body>
+</html>
+

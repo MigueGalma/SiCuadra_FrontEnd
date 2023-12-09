@@ -1,0 +1,335 @@
+*{
+    box-sizing: border-box;
+    
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+body{
+    font-family: "Roboto", sans-serif;
+    
+}
+
+h1{font-size: 3.5rem;}
+h2{font-size: 2.7rem;}
+h3{font-size: 2em;}
+p{font-size: 1.25em;}
+
+button{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    color: white;
+    background-color: rgb(5, 158, 230);
+    cursor: pointer;
+    
+}
+button:hover{
+    background-color: rgb(0, 174, 255) ;
+    cursor: pointer;
+}
+
+.container{
+    max-width:  1100px;
+    margin: auto;
+}
+
+.color-acento{ color: rgb(5, 158, 230); }
+
+header{
+    background-color: rgb(245,245,245);
+}
+ 
+header .logotipo{
+        margin: 0;
+        padding: 15px 20px;
+        color: rgb(0, 174, 255);
+        height: 12%;
+        width: 12%;
+}
+
+
+header .container{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+
+}
+
+header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+header a:hover{
+    color: rgb(0, 174, 255) 
+}
+
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 85vh;
+    color: white;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("img/hero3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#hero h1{
+    color: white;
+}
+
+.container button{
+
+}
+
+#somos-sicuadra{
+
+}
+
+#somos-sicuadra .container{
+    text-align: center;
+    padding: 200px 12px;
+}
+
+#nuestros-estilos{
+    background-color: rgb(30,30,30);
+    color: white;
+    text-align: center;
+}
+
+#nuestros-estilos .container{
+    padding: 150px 12px;
+}
+
+#nuestros-estilos h2{
+    margin-top: 0;
+    font-size: 3.2em;
+}
+
+#nuestros-estilos p{
+    display: none;
+    margin-bottom: 30px;
+}
+
+#nuestros-estilos .carta{
+    padding: 20px;
+    background-size: 100% 150px;
+    background-repeat: no-repeat;
+    background-position-y: 0;    
+    margin: 20px ;
+    border-radius: 15px;
+}
+
+.carta:first-child{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    , url("triptico-cropped.jpg");
+}
+
+.carta:nth-child(2){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("img/individual-cropped.jpg");
+}
+
+.carta:nth-child(3){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("img/horizontal-cropped.jpg");
+}
+
+#Quienes-somos .container{
+    text-align: center;
+    padding: 200px 12px;
+}
+
+#Quienes-somos p{
+    margin: 15px 0px;
+    font-weight: bold;
+}
+
+#carrito{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(30,30,30);
+    color: white;
+    height: 80vh;
+}
+
+#carrito h2{
+    font-size: 9vw;
+}
+
+#carrito button{
+    font-size: 5vw;
+}
+
+footer{
+    background-color: rgb(230,230,230);
+}
+
+footer p{
+    margin: 0;
+    padding: 12px;
+    color: rgb(100,100,100);
+}
+
+footer .container{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;  
+}
+
+@media (max-width: 720px){
+
+    header{
+        position: relative;
+        width: 100%;
+    }
+
+    }
+
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+
+    #somos-sicuadra .container{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #somos-sicuadra .texto{
+        width: 50%;
+        max-width: 600px;
+        text-align: initial;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+
+    #somos-sicuadra h2{
+        margin-top: 0px;
+    }
+
+    #somos-sicuadra .img-container{
+        background-image: url("img/somos-sicuadra2.jpg");
+        background-size: cover;
+        background-position: center center;
+        height: 500px;
+        width: 400px;
+    }
+
+    #nuestros-estilos .programas{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+
+    
+    }
+
+    #nuestros-estilos p{
+        display: block;
+        margin-bottom: 30px;
+    }
+    
+    #nuestros-estilos h3{
+        margin-top: 0;
+    }
+
+    #nuestros-estilos .carta{
+        padding: 50px;
+        background-size:100% 150px;
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-color: rgba(50,50,50,0.5);
+
+        
+    }
+
+    .carta:first-child{
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        )
+        ,url("img/horizontal-cropped.jpg");
+    }
+    
+    .carta:nth-child(2){
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        )
+        ,url("img/triptico-cropped.jpg");
+    }
+    
+    .carta:nth-child(3){
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        )
+        ,url("img/individual-cropped.jpg");
+    }
+
+}
+
+@media (min-width:500 px){
+
+    h1{font-size: 1rem;}
+    }
+
+    
