@@ -20,8 +20,8 @@
     <!--formulario -->
 
     <div class="container mb-4 mt-4">
-        <h1>Encargue su cuadro personalizado</h1>
-        <form id="myForm" action="127.0.0.1:5000/registro" method="POST" class="needs-validation" novalidate>
+        <h1>Cotize el cuadro con el tema que le gustaría</h1>
+        <form id="myForm" action="http://127.0.0.1:5000/registro" method="POST" class="needs-validation" novalidate>
           <div class="form-group">
             <label for="nombre">Nombres:</label>
             <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Ingrese su nombre" oninput="validarLetras(this)">
@@ -49,7 +49,22 @@
             <div class="form-group col-6 row">
             <label for="codigopostal">Codigo Postal</label>
             <input type="text" class="form-control" id="codigopostal" name="codigopostal" required placeholder="Ingrese su codigo postal">
-          </div>        
+          </div>
+          <div class="form-group">
+            <label for="tematica">Tematica: </label>
+            <select name="tematica" id="tem">
+              <option value="arte">Arte</option>
+              <option value="abstracto">Arte abstracto</option>
+              <option value="ciudades">Ciudades del mundo</option>
+              <option value="conceptuales">Conceptuales</option>
+              <option value="deportes">Deportes</option>
+              <option value="mapamundi">Mapa mundi</option>
+              <option value="naturaleza">Naturaleza</option>
+              <option value="paisajes">Paisajes</option>
+              <option value="serypel">Series y peliculas</option>
+              <option value="vehiculos">Vehiculos</option>
+            </select>
+          </div>
           <div class="form-group">
             <p>Orientación del cuadro:</p>          
             <div class="form-check form-check-inline">
@@ -126,6 +141,9 @@
           }
         }
         </script>
+   
+   <!-- ESTE CAMPO SE ELIMINO DEL FORMULARIO PORQUE IMPLICABA MANDAR UNA IMAGEN QUE OCUPABA ESPACIO
+    EN EL SERVIDOR-->
 
     <!--  Script para tener una preview de la imagen que cargamos al formulario-->
     <!--  <script>
@@ -180,7 +198,7 @@
             });
 
             // Script para habilitar la medida que corresponda a la opcion seleccionada
-            var medidaAsociada = this.value.replace("orientacio1", "medida1");
+            var medidaAsociada = this.value.replace("orientacion1", "medida1");
             document.querySelector('input[value="' + medidaAsociada + '"]').disabled = false;
             var medidaAsociada = this.value.replace("orientacion2", "medida2");
             document.querySelector('input[value="' + medidaAsociada + '"]').disabled = false;
@@ -216,14 +234,14 @@
         document.querySelector("form").addEventListener("submit",validacionFormulario)
         </script>
 
-        
+      <script src="js/export.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
     
     <!-- Programa para exportar los datos al formulario-->
-    <!-- <script src="js/export.js"></script> -->
+    
 
     <!-- Programa que recibe los datos consultados
     <div id="placeholder">
