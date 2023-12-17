@@ -8,7 +8,7 @@ window.onload = function () {
             if (form.checkValidity() === false) {
 
             } else {
-                mySubmitButton.innerHTML = "Sending..."
+                mySubmitButton.innerHTML = "Enviado"
                 mySubmitButton.disabled = true;
                 fetch(form.action, { method: 'post', body : new FormData(form)})
                 .then((response) => {

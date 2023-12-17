@@ -1,12 +1,15 @@
-// Programa que devuelve los datos del BackEnd
+const url = 'http://127.0.0.1:5000/respuesta/answer.json';
 
-var myPlaceholder = document.getElementById("placeholder")
+const response = await fetch(url);
 
-fetch('http://127.0.0.1:5000/respuesta')
-    .then(response => response.json())
-    .then(data => { 
-        console.log(data)
-        for (var product of data) {
-            addItemList(myPlaceholder, product.nombre)
-        } 
-    })
+const data = await response.json();
+
+console.log(data)
+
+
+
+
+
+
+        
+

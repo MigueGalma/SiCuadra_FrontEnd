@@ -1,0 +1,48 @@
+// Programa que devuelve los datos del BackEnd
+
+var myPlaceholder = document.getElementById("placeholder");
+
+fetch('http://127.0.0.1:5000/respuesta')
+    .then(response => response.json())
+    .then(data => { console.log(data); })
+        
+
+
+var nroregistro = data.idRegistro;
+        var nombre = data.nombre;
+        var apellido = data.apellido;
+        var tematica = data.tematica;
+        var orientacion = data.orientacion;
+        var medidas = data.medidas;
+        var precio = data.precios}
+    );
+
+// Volcado de contenido
+
+var ph1= document.getElementById('men1');
+ph1.innerText="Nro de pedido: " + nroregistro;
+
+
+var ph2= document.getElementById('men2');
+ph2.innerText="Nombre: " + nombre;
+
+
+var ph3= document.getElementById('men3');
+ph3.innerText="Apellido: " + apellido;
+
+
+var ph4= document.getElementById('men4');
+ph4.innerText="Tematica: " + tematica;
+
+var ph5= document.getElementById('men5');
+ph5.innerText="Orientacion: " + orientacion;
+
+
+var ph6= document.getElementById('men6');
+ph6.innerText="Medidas: " + medidas;
+
+var ph7= document.getElementById('men7');
+ph7.innerText="Precio: " + precio;
+
+var ph8= document.getElementById('men8');
+ph8.innerHTML= "<p> Si esta interesado, puede mandar la imagen en formato JPG ajuntado a nuestro email pedidos@sicuadra.com"
