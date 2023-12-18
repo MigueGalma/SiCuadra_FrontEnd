@@ -1,6 +1,6 @@
 // Captura del JSON
 
-fetch('http://127.0.0.1:5000/respuesta')
+fetch('https://miguegalma.pythonanywhere.com/respuesta')
     .then(response => response.json())
     .then(data => {console.log(data) 
             var ph1= document.getElementById('mens1')
