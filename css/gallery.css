@@ -26,6 +26,13 @@ text-align: center;
 font-style: italic;}
 p{font-size: 1.25em;}
 
+main{
+    background-color: beige;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    }
+
+
 button{
     font-size: 1.5em;
     font-weight: bold;
@@ -62,12 +69,12 @@ header .logotipo{
     width: 12%;
 }
 
-
 header .container{
- display: flex;
- flex-direction: column;
- align-items: center;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
 
 header nav{
 display: flex;

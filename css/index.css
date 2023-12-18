@@ -83,6 +83,12 @@ header a:hover{
     color: rgb(0, 174, 255) 
 }
 
+main{
+    background-color: beige;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    }
+
 #hero{
     display: flex;
     align-items: center;
@@ -135,18 +141,24 @@ header a:hover{
 }
 
 #nuestros-estilos p{
-    display: none;
-    margin-bottom: 30px;
+    display: flex;
+    margin-bottom: 0px;
 }
 
 #nuestros-estilos .carta{
-    padding: 20px;
-    background-size: 100% 150px;
+    padding: 10px;
+    background-size: 100% 100px;
     background-repeat: no-repeat;
     background-position-y: 0;    
     margin: 20px ;
     border-radius: 15px;
 }
+
+.programas{display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+
 
 .carta:first-child{
     background-image: linear-gradient(
@@ -193,15 +205,15 @@ header a:hover{
     text-align: center;
     background-color: rgb(30,30,30);
     color: white;
-    height: 80vh;
+    height: 60vh;
 }
 
 #carrito h2{
-    font-size: 9vw;
+    font-size: 7vw;
 }
 
 #carrito button{
-    font-size: 5vw;
+    font-size: 3vw;
 }
 
 footer{
@@ -219,6 +231,12 @@ footer .container{
     display: flex;
     justify-content: center;
     align-items: flex-end;  
+}
+
+.fbx{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 @media (max-width: 720px){
@@ -281,7 +299,8 @@ footer .container{
 
     #nuestros-estilos p{
         display: block;
-        margin-bottom: 30px;
+        margin-bottom: 100%px;
+        padding:10px;
     }
     
     #nuestros-estilos h3{
@@ -289,11 +308,11 @@ footer .container{
     }
 
     #nuestros-estilos .carta{
-        padding: 50px;
-        background-size:100% 150px;
+        padding: 10px;
+        background-size:100% 100%;
         background-repeat: no-repeat;
         background-position-y: 0;
-        background-color: rgba(50,50,50,0.5);
+        background-color: rgba(138, 132, 132, 0.5);
 
         
     }
@@ -325,7 +344,7 @@ footer .container{
         ,url("img/individual-cropped.jpg");
     }
 
-}
+
 
 @media (min-width:500 px){
 
