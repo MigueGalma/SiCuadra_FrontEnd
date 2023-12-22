@@ -1,6 +1,6 @@
 // Captura del JSON
 
-fetch('https://miguegalma.pythonanywhere.com/respuesta')
+fetch('https://miguegalma.pythonanywhere.com/respuesta', {method:"GET", mode:"no-cors" })
     .then(response => response.json())
     .then(data => {console.log(data) 
             var ph1= document.getElementById('mens1')
