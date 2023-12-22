@@ -10,7 +10,7 @@ window.onload = function () {
             } else {
                 mySubmitButton.innerHTML = "Enviado"
                 mySubmitButton.disabled = true;
-                fetch(form.action, { method: 'post', body : new FormData(form)})
+                fetch(form.action, { method: 'post', body : new FormData(form), mode:"no-cors"})
                 .then((response) => {
                     if (response.status == 200) {
                         // Agregamos una espera de 3 segundos para dar feedback al usuario..
